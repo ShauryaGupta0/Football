@@ -1,15 +1,25 @@
 name: Football
-main: xBeastMode\Football\Loader
-version: 0.0.1
-api: 3.1.0
-load: POSTWORLD
+version: 1.2.3
+api: 5.0.0
 author: xBeastMode
-description: a concept of a football plugin for pocketmine
+description: A concept of a football plugin for PocketMine
+
+main: xBeastMode\Football\Loader
+
+permissions:
+  football.command.killballs:
+    description: Allows players to use the /killballs command
+    default: op
+  football.command.addball:
+    description: Allows players to use the /addball command
+    default: op
 
 commands:
- killballs:
-  description: "Kill All Balls"
-  usage: "Usage: /killballs"
- addball:
-  description: "Spawn a soccer ball"
-  usage: "Usage: /addball [size]"
+  killballs:
+    description: "Kill All Balls"
+    usage: "/killballs"
+    permission: "football.command.killballs"
+  addball:
+    description: "Spawn a soccer ball"
+    usage: "/addball [size]"
+    permission: "football.command.addball"
