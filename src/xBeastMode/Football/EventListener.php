@@ -2,16 +2,18 @@
 
 namespace xBeastMode\Football;
 
-use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\Listener;
+use pocketmine\event\entity\EntityDamageEvent;
 
-class EventListener implements Listener{
+class EventListener implements Listener {
 
-        public function damage(EntityDamageEvent $event){
-                $target = $event->getEntity();
-                if($target instanceof BallEntity){
-                        $event->setCancelled();
-                }
+    public function onDamage(EntityDamageEvent $event): void {
+        $target = $event->getEntity();
+        if ($target instanceof BallEntity) {
+            // Cancel damage towards BallEntity
+            $event->setCancelled();
         }
+    }
 
+    // Additional event Handling May Curd
 }
